@@ -43,5 +43,6 @@ steps:
   run: |
     echo '::set-output name=action_echo::enabled'
     python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
+    cat result.txt
     echo '::set-output name=result::$(cat result.txt)'
     echo '::set-output name=action_echo::disabled'
