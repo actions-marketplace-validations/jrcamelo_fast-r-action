@@ -16,3 +16,4 @@ python_version = "3.9"
 
 [scripts]
 test = "pytest"
+fastr = "python -m fastr_wrapper"
