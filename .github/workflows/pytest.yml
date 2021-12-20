@@ -37,7 +37,11 @@ jobs:
 
       - name: Print file structure
         run: |
-          tree -a
+          tree
+
+      - name: Setup project
+        run: |
+          pipenv install -e .
 
       - name: Run FAST-R Wrapper
         run: |
