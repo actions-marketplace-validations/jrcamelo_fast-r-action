@@ -48,6 +48,6 @@ steps:
       - lines_file
       - bbox_file
   run: |
-    python3 -m fastr_wrapper ${{github.event.inputs.test_folder}} ${{github.event.inputs.test_coverage}} ${{github.event.inputs.lines_file}}${{github.event.inputs.bbox_file}}> result.txt
-    echo '::set-output name=result::$(cat)'
+    python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
+    echo '::set-output name=result::$(cat result.txt)'
     echo '::set-output name=action_echo::disabled'
