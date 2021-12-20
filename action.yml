@@ -7,8 +7,30 @@ runs-on: ubuntu-latest
 runs:
   using: 'docker'
   image: 'Dockerfile'
+
+inputs:
+  test_folder:
+    description: path of the tests folder
+    type: string
+    default: 'tests'
+  test_coverage:
+    description: path of the coverage file
+    type: string
+    default: "coverage.txt"
+  lines_file:
+    description: name of lines file that will be generated(?)
+    type: string
+    default: "lines.txt"
+  bbox_file:
+    description: name of bbox file that will be generated(?)
+    type: string
+    default: "bbox.txt"
+outputs:
+  result:
+    description: reduced tests
 steps:
 - uses: actions/checkout@master
+- run: echo '::set-output name=action_echo::enabled'
 - name: FAST-R GitHub Action
   uses: jrcamelo/fast-r-action@master
   with:
