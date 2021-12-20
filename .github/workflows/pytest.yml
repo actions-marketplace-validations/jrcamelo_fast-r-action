@@ -39,10 +39,6 @@ jobs:
         run: |
           tree
 
-      - name: Setup project
-        run: |
-          pipenv install -e .
-
       - name: Run FAST-R Wrapper
         run: |
           pipenv run fastr
