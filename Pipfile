@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "=1.15.1"
-sklearn = "=0.19.2"
-xxhash = "=1.2.0"
+numpy = "==1.15.1"
+sklearn = "==0.19.2"
+xxhash = "==1.2.0"
 
 [dev-packages]
 pytest = "*"
