@@ -40,7 +40,14 @@ steps:
       - test_coverage
       - lines_file
       - bbox_file
-- run: |
+- name: FAST-R again?
+  with:
+    args: 
+      - test_folder
+      - test_coverage
+      - lines_file
+      - bbox_file
+  run: |
     python3 -m fastr_wrapper ${{github.event.inputs.test_folder}} ${{github.event.inputs.test_coverage}} ${{github.event.inputs.lines_file}}${{github.event.inputs.bbox_file}}> result.txt
     echo '::set-output name=result::$(cat)'
     echo '::set-output name=action_echo::disabled'
