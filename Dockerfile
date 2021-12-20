@@ -1,4 +1,4 @@
-FROM python:3.9.9-alpine
+FROM python:3.7-slim-bullseye
 
 LABEL "com.github.actions.name"="GitHub Action for FAST-R"
 LABEL "com.github.actions.description"="Run FAST-R on Python"
