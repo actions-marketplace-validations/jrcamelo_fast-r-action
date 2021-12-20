@@ -18,7 +18,6 @@ RUN python3 -m pip install pytest numpy sklearn xxhash
 # Copy src folder to root
 COPY src/ /
 
-RUN ls -R
 RUN python3 -m fastr_wrapper test test example_lines.txt example_bbox.txt
 
 COPY entrypoint.sh /
