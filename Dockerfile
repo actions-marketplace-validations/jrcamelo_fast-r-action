@@ -6,7 +6,7 @@ LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="black"
 
 
-RUN pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip
 # RUN pip install pytest pytest-cov numpy sklearn xxhash
 
 COPY Pipfile /
