@@ -13,8 +13,12 @@ RUN python3 -m pip install pytest numpy sklearn xxhash
 # RUN python3 -m pip install --upgrade pipenv wheel
 # RUN python3 -m pipenv lock # Maybe this is the problem?
 # RUN python3 -m pipenv install --deploy --dev
-RUN ls -R
 # RUN python3 -m pipenv run fastr test test example_lines.txt example_bbox.txt
+
+# Copy src folder to root
+COPY src/ /
+
+RUN ls -R
 RUN python3 -m fastr_wrapper test test example_lines.txt example_bbox.txt
 
 COPY entrypoint.sh /
