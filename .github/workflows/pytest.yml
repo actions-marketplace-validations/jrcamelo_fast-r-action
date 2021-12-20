@@ -41,4 +41,4 @@ jobs:
 
       - name: Run FAST-R Wrapper
         run: |
-          pipenv run fastr
+          pipenv run fastr test test example_lines.txt example_bbox.txt

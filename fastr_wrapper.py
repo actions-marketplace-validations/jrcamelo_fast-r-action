@@ -10,6 +10,7 @@ print("FASTR WRAPPER")
 # Argument check
 if (len(sys.argv) != 5):
     print("Usage: python3 fastr_wrapper.py <tests_folder> <coverage_file> <lines_file> <bbox_file>")
+    sys.exit(1)
 
 tests_folder = sys.argv[1]
 coverage_file = sys.argv[2]
