@@ -28,7 +28,7 @@ from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.random_projection import johnson_lindenstrauss_min_dim
 from sklearn.random_projection import SparseRandomProjection
 
-import fastr.lsh
+import lsh
 
 
 """

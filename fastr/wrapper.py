@@ -1,9 +1,9 @@
 import sys
 
-from fastr.fastr_adequate import fastPlusPlus
-from testcov.test_parser import coverage_parser, blackbox_parser
+from fastr_adequate import fastPlusPlus
+from test_parser import coverage_parser, blackbox_parser
 # Example
-from testcov.example_maker import create_example_bbox_file, create_example_lines_file
+from example_maker import create_example_bbox_file, create_example_lines_file
 
 print("FASTR WRAPPER")
 
