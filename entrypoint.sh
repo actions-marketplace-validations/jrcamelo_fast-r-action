@@ -9,7 +9,7 @@ test -f $TESTS_INIT || touch $TESTS_INIT
 
 # python3 -m coverage run -m pytest
 #       pytest --cov=. tests/ --cov-report xml
-pytest --cov="/fastr/" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report xml
+pytest --cov="/fastr/coverage.xml" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report xml
 # python3 -m coverage xml -o "/fastr/coverage.xml"
 cd "/"
 
