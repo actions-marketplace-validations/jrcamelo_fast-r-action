@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "#################################################"
-
 sh -c "$*"
 
 cd "${GITHUB_WORKSPACE}"
@@ -10,7 +8,8 @@ TESTS_INIT="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/__init__.py"
 test -f $TESTS_INIT || touch $TESTS_INIT
 
 # python3 -m coverage run -m pytest
-pytest --cov="/fastr/coverage.xml" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report xml
+#       pytest --cov=. tests/ --cov-report xml
+pytest --cov="/fastr/" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report xml
 # python3 -m coverage xml -o "/fastr/coverage.xml"
 cd "/"
 
@@ -22,5 +21,4 @@ echo "$RESULT"
 
 echo '::set-output name=result::'$RESULT
 
-echo "#################################################"
 echo "Completed ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
