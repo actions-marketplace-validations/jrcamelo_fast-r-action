@@ -5,7 +5,9 @@ echo "#################################################"
 
 sh -c "$*"
 
-python3 -m coverage xml -o "/fastr/coverage.xml" --source="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}"
+cd "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/"
+python3 -m coverage xml -o "/fastr/coverage.xml"
+cd "/"
 
 echo '::set-output name=action_echo::enabled'
 python3 "/fastr/wrapper.py" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" "${GITHUB_WORKSPACE}/${INPUT_TEST_COVERAGE}" "${GITHUB_WORKSPACE}/${INPUT_LINES_FILE}" "${GITHUB_WORKSPACE}/${INPUT_BBOX_FILE}"
