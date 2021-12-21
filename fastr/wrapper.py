@@ -2,8 +2,7 @@ import sys
 
 from fastr_adequate import fastPlusPlus
 from test_parser import coverage_parser, blackbox_parser
-# Example
-from example_maker import create_example_bbox_file, create_example_lines_file
+#from example_maker import create_example_bbox_file, create_example_lines_file
 
 print("FASTR WRAPPER")
 
@@ -23,8 +22,10 @@ print("BBOX file: " + bbox_file)
 
 # blackbox_parser(tests_folder, bbox_file)
 # coverage_parser(coverage_file, lines_file)
-create_example_bbox_file(bbox_file)
-create_example_lines_file(lines_file)
+
+# Test examples
+# create_example_bbox_file(bbox_file)
+# create_example_lines_file(lines_file)
 
 
 # Execute Test Reduction
