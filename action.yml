@@ -1,5 +1,5 @@
 name: FAST-R GitHub Action
-description: 'Runs FAST-R on GitHub Actions'
+description: 'Runs FAST-R and returns a reduced list of tests'
 branding:
   icon: box
   color: gray-dark
@@ -12,11 +12,11 @@ inputs:
   test_folder:
     description: path of the tests folder
     type: string
-    default: 'tests'
+    default: '/tests'
   test_coverage:
-    description: path of the coverage file
+    description: path of the coverage xml file
     type: string
-    default: "coverage.txt"
+    required: false
 
 outputs:
   result:
@@ -30,10 +30,5 @@ steps:
     args: 
       - test_folder
       - test_coverage
-
-  # run: |
-  #   echo 'running1?'
-  #   echo '::set-output name=action_echo::enabled'
-  #   python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
 
 
