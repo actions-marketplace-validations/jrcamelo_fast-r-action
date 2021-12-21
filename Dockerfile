@@ -19,7 +19,8 @@ RUN python3 -m pip install pytest numpy sklearn xxhash
 RUN mkdir "${GITHUB_WORKSPACE}/.github"
 RUN mkdir "${GITHUB_WORKSPACE}/.github/scripts"
 RUN mkdir "${GITHUB_WORKSPACE}/.github/scripts/fastr"
-COPY .github/scripts/ "${GITHUB_WORKSPACE}/.github/scripts/fastr/"
+COPY .github/scripts/ /
+COPY requirements.txt /
 
 
 # RUN python3 -m fastr_wrapper test test example_lines.txt example_bbox.txt
