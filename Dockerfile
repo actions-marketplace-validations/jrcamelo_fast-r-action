@@ -15,9 +15,9 @@ RUN python3 -m pip install pytest pytest-cov coverage numpy sklearn xxhash
 # RUN python3 -m pipenv install --deploy --dev
 # RUN python3 -m pipenv run fastr test test example_lines.txt example_bbox.txt
 
-# Copy src folder to root
-COPY fastr/ "${GITHUB_WORKSPACE}/fastr/"
-COPY requirements.txt /requirements.txt
+# # Copy src folder to root
+# COPY fastr/ "${GITHUB_WORKSPACE}/fastr/"
+# COPY requirements.txt /requirements.txt
 
 
 # RUN python3 -m fastr_wrapper test test example_lines.txt example_bbox.txt
