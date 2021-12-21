@@ -8,12 +8,8 @@ sh -c "$*"
 
 echo "#################################################"
 echo  "${INPUT_TEST_FOLDER} ${INPUT_TEST_COVERAGE} ${INPUT_LINES_FILE} ${INPUT_BBOX_FILE}"
-
 echo "#################################################"
-echo "${GITHUB_ACTION_REPOSITORY}"
-echo "${GITHUB_ACTION_REF}"
-echo "#################################################"
-ls -la "${GITHUB_WORKSPACE}"
+ls -la "${GITHUB_WORKSPACE}/.github/scripts/"
 echo "#################################################"
 
 echo '::set-output name=action_echo::enabled'
@@ -22,7 +18,7 @@ echo '::set-output name=result::aaaaaaaaaaaaaaaa'
 
 echo 'running1?'
 echo '::set-output name=action_echo::enabled'
-# python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
+python3 "${GITHUB_WORKSPACE}/.github/scripts/fastr_wrapper" "${INPUT_TEST_FOLDER} ${INPUT_TEST_COVERAGE} ${INPUT_LINES_FILE} ${INPUT_BBOX_FILE}" > result.txt
 echo '::set-output name=result::$(cat result.txt)'
 
 
