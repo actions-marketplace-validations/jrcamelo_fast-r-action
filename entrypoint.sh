@@ -8,9 +8,9 @@ TESTS_INIT="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/__init__.py"
 test -f $TESTS_INIT || touch $TESTS_INIT
 
 # python3 -m coverage run -m pytest
-#       pytest --cov=. tests/ --cov-report xml
-pytest --cov="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report xml -o "/fastr/coverage.xml"
 # python3 -m coverage xml -o "/fastr/coverage.xml"
+pytest --cov="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" --cov-report=xml:/fastr/coverage.xml
+
 cd "/"
 
 echo '::set-output name=action_echo::enabled'
