@@ -17,17 +17,10 @@ inputs:
     description: path of the coverage file
     type: string
     default: "coverage.txt"
-  lines_file:
-    description: name of lines file that will be generated(?)
-    type: string
-    default: "lines.txt"
-  bbox_file:
-    description: name of bbox file that will be generated(?)
-    type: string
-    default: "bbox.txt"
+
 outputs:
   result:
-    description: reduced tests
+    description: list of reduced tests
 
 steps:
 - uses: actions/checkout@master
@@ -37,24 +30,10 @@ steps:
     args: 
       - test_folder
       - test_coverage
-      - lines_file
-      - bbox_file
-  run: |
-    echo 'running1?'
-    echo '::set-output name=action_echo::enabled'
-    python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
 
-- name: Save result.txt to output
-  run: |
-    echo '::set-output name=action_echo::enabled'
-    echo 'running3?'
-    echo '::set-output name=result::$(cat result.txt)'
-    echo '::set-output name=result::aaaaaaaaaaaaaaaa'
-
-- name: Print file tree
-  run: |
-    echo '::set-output name=action_echo::enabled'
-    echo 'running4?'
-    ls
+  # run: |
+  #   echo 'running1?'
+  #   echo '::set-output name=action_echo::enabled'
+  #   python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
 
 
