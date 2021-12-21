@@ -7,7 +7,7 @@ LABEL "com.github.actions.color"="black"
 
 
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install pytest coverage numpy sklearn xxhash
+RUN python3 -m pip install pytest pytest-cov coverage numpy sklearn xxhash 
 
 # COPY Pipfile /
 # RUN python3 -m pip install --upgrade pipenv wheel
