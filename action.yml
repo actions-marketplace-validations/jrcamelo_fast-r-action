@@ -1,7 +1,7 @@
-name: FAST-R GitHub Action
-description: 'Runs FAST-R and returns a reduced list of tests'
+name: FAST-R Test Reduction for PyTest
+description: 'Runs a test reduction algorithm for PyTest projects and returns a reduced list of tests'
 branding:
-  icon: box
+  icon: minimize-2
   color: gray-dark
 runs-on: ubuntu-latest
 runs:
@@ -13,8 +13,9 @@ inputs:
     description: path of the tests folder
     type: string
     default: 'tests/'
+    required: true
   test_coverage:
-    description: path of the coverage xml file
+    description: path of the coverage xml file, which the action can generate
     type: string
     required: false
 
@@ -24,7 +25,7 @@ outputs:
 
 steps:
 - uses: actions/checkout@master
-- name: FAST-R GitHub Action
+- name: FAST-R for PyTest
   uses: jrcamelo/fast-r-action@master
   with:
     args: 
