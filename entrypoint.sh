@@ -9,6 +9,7 @@ cd "${GITHUB_WORKSPACE}"
 TESTS_INIT="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/__init__.py"
 test -f $TESTS_INIT || touch $TESTS_INIT
 
+python3 -m coverage run -m pytest
 python3 -m coverage xml -o "/fastr/coverage.xml"
 cd "/"
 
