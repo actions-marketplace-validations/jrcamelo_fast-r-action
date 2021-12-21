@@ -1,6 +1,6 @@
 import sys
 
-from fastr_adequate import fastPlusPlus
+from fastr_adequate import fastCS
 from test_parser import coverage_parser, blackbox_parser
 #from example_maker import create_example_bbox_file, create_example_lines_file
 
@@ -30,7 +30,7 @@ coverage_parser(coverage_file, lines_file)
 
 # Execute Test Reduction
 # print("\n\nFAST++")
-fastr_output = fastPlusPlus(bbox_file, lines_file)
+fastr_output = fastCS(bbox_file, lines_file)
 # print("Output: " + str(fastr_output))
 # Get only the tests that should be executed
 reduced_tests = fastr_output[3]
