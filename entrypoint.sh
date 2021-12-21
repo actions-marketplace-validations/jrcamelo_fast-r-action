@@ -10,18 +10,21 @@ echo "#################################################"
 echo  "${INPUT_TEST_FOLDER} ${INPUT_TEST_COVERAGE} ${INPUT_LINES_FILE} ${INPUT_BBOX_FILE}"
 
 echo "#################################################"
-echo "${GITHUB_WORKSPACE}"
-ls -R "${GITHUB_WORKSPACE}"
+echo "${GITHUB_ACTION_REPOSITORY}"
+echo "${GITHUB_ACTION_REF}"
 echo "#################################################"
-
-echo 'running1?'
-echo '::set-output name=action_echo::enabled'
-python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
+ls -la "${GITHUB_WORKSPACE}"
+echo "#################################################"
 
 echo '::set-output name=action_echo::enabled'
 echo 'running3?'
-echo '::set-output name=result::$(cat result.txt)'
 echo '::set-output name=result::aaaaaaaaaaaaaaaa'
+
+echo 'running1?'
+echo '::set-output name=action_echo::enabled'
+# python3 -m fastr_wrapper test1 test2 linestest bboxtest > result.txt
+echo '::set-output name=result::$(cat result.txt)'
+
 
 echo '::set-output name=action_echo::enabled'
 echo 'running4?'
