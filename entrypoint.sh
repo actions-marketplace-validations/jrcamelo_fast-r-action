@@ -9,7 +9,7 @@ sh -c "$*"
 echo "#################################################"
 echo  "${INPUT_TEST_FOLDER} ${INPUT_TEST_COVERAGE} ${INPUT_LINES_FILE} ${INPUT_BBOX_FILE}"
 echo "#################################################"
-ls -lar "${GITHUB_WORKSPACE}"
+ls -r "${GITHUB_WORKSPACE}/.github/"
 echo "#################################################"
 
 echo '::set-output name=action_echo::enabled'
