@@ -21,7 +21,7 @@ def coverage_parser(coverage_file, lines_file):
             if coverage_line:
                 file.write(coverage_line)
                 file.write("\n")
-    print("Test nodes count: " + str(count_root))
+    # print("Test nodes count: " + str(count_root))
     # print("Test files count: " + str(count_file))
     # print("Finished parsing coverage data")
     file.close()

@@ -20,5 +20,3 @@ RESULT=`cat /fastr/result.txt`
 echo "$RESULT"
 
 echo '::set-output name=result::'$RESULT
-
-echo "Completed ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
