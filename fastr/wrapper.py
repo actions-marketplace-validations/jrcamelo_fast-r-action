@@ -2,7 +2,6 @@ import sys
 
 from fastr_adequate import fastCS
 from test_parser import coverage_parser, blackbox_parser
-#from example_maker import create_example_bbox_file, create_example_lines_file
 
 # print("FASTR WRAPPER")
 
@@ -12,7 +11,7 @@ if (len(sys.argv) != 5):
     sys.exit(1)
 
 tests_folder = sys.argv[1]
-coverage_file = "/fastr/coverage.xml"
+coverage_file = sys.argv[2]
 lines_file = sys.argv[3]
 bbox_file = sys.argv[4]
 # print("Tests folder: " + tests_folder)
@@ -22,10 +21,6 @@ bbox_file = sys.argv[4]
 
 blackbox_parser(tests_folder, bbox_file)
 coverage_parser(coverage_file, lines_file)
-
-# Test examples
-# create_example_bbox_file(bbox_file)
-# create_example_lines_file(lines_file)
 
 
 # Execute Test Reduction

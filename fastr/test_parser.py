@@ -21,6 +21,7 @@ def coverage_parser(coverage_file, lines_file):
             if coverage_line:
                 file.write(coverage_line)
                 file.write("\n")
+    print("ERROR: No tests detected in coverage file")
     # print("Test nodes count: " + str(count_root))
     # print("Test files count: " + str(count_file))
     # print("Finished parsing coverage data")
@@ -46,7 +47,9 @@ def blackbox_parser(tests_folder, bbox_file):
             file.write('\n')
         else:
             continue
-        
+    
+    if (count_checked == 0):
+        print("ERROR: No tests detected for bbox")
     # print("Checked files: " + str(count_checked))
     # print("Valid tests: " + str(count_valid))
     # print("Finished parsing blackbox data")
