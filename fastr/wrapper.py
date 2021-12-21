@@ -13,6 +13,8 @@ if (len(sys.argv) != 5):
 
 tests_folder = sys.argv[1]
 coverage_file = "/fastr/coverage.xml"
+lines_file = sys.argv[3]
+bbox_file = sys.argv[4]
 print("Tests folder: " + tests_folder)
 print("Coverage file: " + coverage_file)
 print("Lines file: " + lines_file)
