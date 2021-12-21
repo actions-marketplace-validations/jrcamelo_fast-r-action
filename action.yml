@@ -12,7 +12,7 @@ inputs:
   test_folder:
     description: path of the tests folder
     type: string
-    default: '/tests'
+    default: 'tests/'
   test_coverage:
     description: path of the coverage xml file
     type: string
