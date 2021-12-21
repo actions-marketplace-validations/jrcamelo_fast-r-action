@@ -2,11 +2,11 @@ import os
 import xml.etree.ElementTree as ET
 
 def coverage_parser(coverage_file, lines_file):
-    print("\n\nCOVERAGE PARSER")
-    print("Getting coverage data from " + coverage_file)
+    # print("\n\nCOVERAGE PARSER")
+    # print("Getting coverage data from " + coverage_file)
     root = ET.parse(coverage_file).getroot()
 
-    print("Saving lines data to " + lines_file)
+    # print("Saving lines data to " + lines_file)
     file = open(lines_file, "w")
 
     count_root = 0
@@ -21,14 +21,14 @@ def coverage_parser(coverage_file, lines_file):
             if coverage_line:
                 file.write(coverage_line)
                 file.write("\n")
-    print("Test nodes count: " + str(count_root))
-    print("Test files count: " + str(count_file))
-    print("Finished parsing coverage data")
+    # print("Test nodes count: " + str(count_root))
+    # print("Test files count: " + str(count_file))
+    # print("Finished parsing coverage data")
     file.close()
     
 def blackbox_parser(tests_folder, bbox_file):
-    print("\n\nBLACKBOX PARSER")
-    print("Getting tests from " + tests_folder)
+    # print("\n\nBLACKBOX PARSER")
+    # print("Getting tests from " + tests_folder)
     file = open(bbox_file, "w")
 
     count_checked = 0
@@ -47,7 +47,7 @@ def blackbox_parser(tests_folder, bbox_file):
         else:
             continue
         
-    print("Checked files: " + str(count_checked))
-    print("Valid tests: " + str(count_valid))
-    print("Finished parsing blackbox data")
+    # print("Checked files: " + str(count_checked))
+    # print("Valid tests: " + str(count_valid))
+    # print("Finished parsing blackbox data")
     file.close()
