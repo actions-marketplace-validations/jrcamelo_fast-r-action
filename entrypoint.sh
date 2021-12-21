@@ -20,7 +20,6 @@ echo "#################################################"
 
 echo '::set-output name=action_echo::enabled'
 echo 'running3?'
-echo '::set-output name=result::aaaaaaaaaaaaaaaa'
 
 echo 'running1?'
 echo '::set-output name=action_echo::enabled'
@@ -29,8 +28,7 @@ python3 "/fastr/wrapper.py" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" "${GITHUB
 RESULT=`cat /fastr/result.txt`
 echo "$RESULT"
 
-echo '::set-output name=result::$($RESULT)'
-echo '::set-output name=output2::$("$RESULT")'
+echo '::set-output name=result::'$RESULT
 
 
 echo '::set-output name=action_echo::enabled'
