@@ -11,7 +11,7 @@ echo  "${INPUT_TEST_FOLDER} ${INPUT_TEST_COVERAGE} ${INPUT_LINES_FILE} ${INPUT_B
 
 echo "#################################################"
 echo "${GITHUB_WORKSPACE}"
-ls "${GITHUB_WORKSPACE}"
+ls -R "${GITHUB_WORKSPACE}"
 echo "#################################################"
 
 echo 'running1?'
