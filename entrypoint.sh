@@ -5,7 +5,7 @@ echo "#################################################"
 
 sh -c "$*"
 
-cd "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/"
+cd "${GITHUB_WORKSPACE}"
 python3 -m coverage xml -o "/fastr/coverage.xml"
 cd "/"
 
