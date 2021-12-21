@@ -26,8 +26,11 @@ echo 'running1?'
 echo '::set-output name=action_echo::enabled'
 python3 "/fastr/wrapper.py" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" "${GITHUB_WORKSPACE}/${INPUT_TEST_COVERAGE}" "${GITHUB_WORKSPACE}/${INPUT_LINES_FILE}" "${GITHUB_WORKSPACE}/${INPUT_BBOX_FILE}"
 python3 "/fastr/wrapper.py" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" "${GITHUB_WORKSPACE}/${INPUT_TEST_COVERAGE}" "${GITHUB_WORKSPACE}/${INPUT_LINES_FILE}" "${GITHUB_WORKSPACE}/${INPUT_BBOX_FILE}" > /fastr/result.txt
-echo cat /fastr/result.txt
-echo '::set-output name=result::$(echo cat /fastr/result.txt)'
+RESULT=`cat /fastr/result.txt`
+echo "$RESULT"
+
+echo '::set-output name=result::$($RESULT)'
+echo '::set-output name=output2::$("$RESULT")'
 
 
 echo '::set-output name=action_echo::enabled'
