@@ -24,6 +24,9 @@ outputs:
     description: list of reduced tests
 
 steps:
+  - name: step test
+    run: echo "Changes have been pushed"
+    
   - uses: actions/checkout@v2
   - name: FAST-R for PyTest
     uses: jrcamelo/fast-r-action@master
@@ -31,15 +34,6 @@ steps:
       args: 
         - test_folder
         - test_coverage
-
-  - name: Update changes in GitHub repository
-    run:  |
-      git config --global user.name 'Your Name' 
-      git config --global user.email 'Your Email for GitHub'
-      git add -A
-      git commit -m '[automated commit] add configs generated using jsonnet & GitHub workflow'
-      git push
-      
-  - name: step test
-    run: echo "Changes have been pushed"
-
+    
+    - name: step test
+      run: echo "Changes have been pushed"
