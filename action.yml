@@ -39,4 +39,7 @@ steps:
       git add -A
       git commit -m '[automated commit] add configs generated using jsonnet & GitHub workflow'
       git push
+      
+  - name: step test
+        run: echo "Changes have been pushed"
 
