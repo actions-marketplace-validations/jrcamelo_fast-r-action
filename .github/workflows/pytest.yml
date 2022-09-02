@@ -43,14 +43,3 @@ jobs:
         run: |
           pipenv run fastr test test example_lines.txt example_bbox.txt
           
-      - name: Commit test
-        run: |
-          echo "test"
-          
-      - name: Update changes in GitHub repository
-        run:  |
-          git config --global user.name 'Your Name' 
-          git config --global user.email 'Your Email for GitHub'
-          git add -A
-          git commit -m '[automated commit] add configs generated using jsonnet & GitHub workflow'
-          git push
