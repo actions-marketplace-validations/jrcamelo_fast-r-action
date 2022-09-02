@@ -26,5 +26,6 @@ echo '::set-output name=action_echo::enabled'
 python3 "/fastr/wrapper.py" "${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}" "${COVERAGE_FILE}" "${LINES_FILE}" "${BBOX_FILE}" > /fastr/result.txt
 RESULT=`cat /fastr/result.txt`
 echo "$RESULT"
+xargs rm -r </fastr/result.txt
 
 echo '::set-output name=result::'$RESULT
