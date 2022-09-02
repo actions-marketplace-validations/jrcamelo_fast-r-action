@@ -43,8 +43,11 @@ jobs:
         run: |
           pipenv run fastr test test example_lines.txt example_bbox.txt
           
+      - name: Commit test
+        run: |
+          echo "test"
+          
       - name: Update changes in GitHub repository
-        if: steps.git-check.outputs.modified == 'true'
         run:  |
           git config --global user.name 'Your Name' 
           git config --global user.email 'Your Email for GitHub'
