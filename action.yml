@@ -27,10 +27,10 @@ steps:
   - name: step test
     run: echo "Changes have been pushed"
     
-  - uses: actions/checkout@v2
-  - name: FAST-R for PyTest
-    uses: jrcamelo/fast-r-action@master
-    with:
-      args: 
-        - test_folder
-        - test_coverage
+#  - uses: actions/checkout@v2
+#  - name: FAST-R for PyTest
+#    uses: jrcamelo/fast-r-action@master
+#    with:
+#      args: 
+#        - test_folder
+#        - test_coverage
