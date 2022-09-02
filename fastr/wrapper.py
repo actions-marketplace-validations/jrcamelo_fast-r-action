@@ -34,7 +34,6 @@ reduced_tests = fastr_output[3]
 # Test index starts from 1, subtract 1 from each of them
 reduced_tests = [int(x) - 1 for x in reduced_tests]
 
-print("FAST-R Reduced Tests\n")
 # Match the test index with the test names in BBOX
 with open(bbox_file) as f:
     for pos, i in enumerate(f):
