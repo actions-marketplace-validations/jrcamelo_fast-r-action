@@ -32,12 +32,10 @@ steps:
       - test_folder
       - test_coverage
       
-    - name: Create report file
-      run: date +%s > report.txt
-    - name: Commit report
-      run: |
-        git config --global user.name 'Your Name'
-        git config --global user.email 'your-username@users.noreply.github.com'
-        git commit -am "Automated report"
-        git push
+- name: Commit report
+  run: |
+    git config --global user.name 'Your Name'
+    git config --global user.email 'your-username@users.noreply.github.com'
+    git commit -am "Automated report"
+    git push
 
