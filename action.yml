@@ -34,6 +34,3 @@ steps:
       args: 
         - test_folder
         - test_coverage
-    
-    - name: step test
-      run: echo "Changes have been pushed"
