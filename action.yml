@@ -41,5 +41,5 @@ steps:
       git push
       
   - name: step test
-        run: echo "Changes have been pushed"
+    run: echo "Changes have been pushed"
 
