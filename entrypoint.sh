@@ -14,6 +14,7 @@ then
       python3 -m pytest --cov="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/.." --cov-report=xml:/fastr/coverage.xml -q > /fastr/coverage_logs.txt || echo "ERROR: FATAL FAILURE ON COVERAGE FILE GENERATION"
       # python3 -m coverage run -m pytest
       # python3 -m coverage xml -o "/fastr/coverage.xml"
+      pytest --collect-only | grep "<Function\|<Class" -c
 else
       COVERAGE_FILE="${INPUT_TEST_COVERAGE}"
 fi
