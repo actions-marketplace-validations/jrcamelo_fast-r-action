@@ -29,5 +29,6 @@ RESULT=`cat /fastr/result.txt`
 echo "$RESULT"
 cd "${GITHUB_WORKSPACE}"
 xargs rm -r </fastr/result.txt
+python3 -m pytest --collect-only -q | head -n -2 | wc -l
 
 echo '::set-output name=result::'$RESULT
