@@ -11,6 +11,7 @@ then
       cd "${GITHUB_WORKSPACE}"
       TESTS_INIT="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/__init__.py"
       test -f $TESTS_INIT || touch $TESTS_INIT
+      python3 -m pip install -r requirements.txt
       python3 -m pytest --cov="${GITHUB_WORKSPACE}/${INPUT_TEST_FOLDER}/.." --cov-report=xml:/fastr/coverage.xml -q > /fastr/coverage_logs.txt || echo "ERROR: FATAL FAILURE ON COVERAGE FILE GENERATION"
       python3 -m pytest --collect-only -q | head -n -2 | wc -l
       # python3 -m coverage run -m pytest
